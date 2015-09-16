@@ -2,6 +2,7 @@
 public class Gastador extends Thread {
 	int cantidad = 0;
 	boolean acabar = false;
+	final int NUM_VECES = 100;
 	Cuenta cuenta;
 	public Gastador(int cantidad, Cuenta cuenta) {
 		this.cantidad = cantidad;
@@ -10,8 +11,8 @@ public class Gastador extends Thread {
 	
 	@Override
 	public void run() {
-		while(!acabar) {
-			cuenta.meterDinero(cantidad);
+		for(int i = 0; i < NUM_VECES; i++) {
+			cuenta.sacarDinero(cantidad);
 		}
 	}
 	public void setAcabar(boolean acabar) {

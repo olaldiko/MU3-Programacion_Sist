@@ -1,29 +1,31 @@
 import java.util.concurrent.Semaphore;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Cuenta {
-	int saldo = 0;
+	AtomicInteger saldo = new AtomicInteger(0);
 	Semaphore sem = new Semaphore(1);
-	public synchronized void meterDinero(int cantidad) {
+	public void meterDinero(int cantidad) {
 		try {
 			sem.acquire();
+			saldo.addAndGet(cantidad);
+			sem.release();
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		saldo += cantidad;
-		sem.release();
+
 	}
-	public synchronized void sacarDinero(int cantidad) {
+	public void sacarDinero(int cantidad) {
 		try {
 			sem.acquire();
+			saldo.addAndGet(-cantidad);
+			sem.release();
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		saldo -= cantidad;
-		sem.release();
 	}
 	public int getSaldo() {
-		return saldo;
+		return saldo.get();
 	}
 }
