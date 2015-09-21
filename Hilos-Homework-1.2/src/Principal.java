@@ -9,7 +9,7 @@ public class Principal {
 	int matrixB[][] = RandomMatrixFactory.generateMatrix(ROWS, COLS, BOUNDS);
 	int matrixC[][] = new int[ROWS][COLS];
 	Multiplier[] threads = new Multiplier[NUM_THREADS];
-	public void run() {
+	public void exec() {
 		startThreads();
 		waitThreads();
 		viewMatrix();
@@ -38,7 +38,7 @@ public class Principal {
 	
 	public static void main(String[] args) {
 		Principal p = new Principal();
-		p.run();
+		p.exec();
 
 	}
 }

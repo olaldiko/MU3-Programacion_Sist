@@ -19,7 +19,7 @@ public class Multiplier extends Thread {
 		for(int i = initRow; i < (initRow + numRows); i++){
 			for(int j = 0; j < matrixB[0].length; j++) {
 				for(int k = 0; k < matrixB.length; k++) {
-					result += matrixA[i][k]*matrixB[k][j];
+					result += matrixA[i][k] * matrixB[k][j];
 				}
 				synchronized(candado) {
 					matrixC[i][j] = result;
