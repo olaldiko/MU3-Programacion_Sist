@@ -1,4 +1,8 @@
+package robots;
 import java.util.Random;
+
+import buffers.PartBuffer;
+import parts.Part;
 
 public class AssemblyRobot extends Thread {
 

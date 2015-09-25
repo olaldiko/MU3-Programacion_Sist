@@ -1,3 +1,6 @@
+package robots;
+import buffers.PartBuffer;
+import parts.Part;
 
 public class SupplyRobot extends Thread {
 	int partType;

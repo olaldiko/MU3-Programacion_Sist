@@ -1,4 +1,4 @@
-package Pieces;
+package parts;
 
 public class SweaterBody {
 

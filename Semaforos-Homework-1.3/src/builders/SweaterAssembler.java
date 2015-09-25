@@ -1,7 +1,7 @@
-package Builders;
+package builders;
 
-import Buffers.SleeveBuffer;
-import Buffers.SweaterBodyBuffer;
+import buffers.SleeveBuffer;
+import buffers.SweaterBodyBuffer;
 
 public class SweaterAssembler extends Thread {
 	

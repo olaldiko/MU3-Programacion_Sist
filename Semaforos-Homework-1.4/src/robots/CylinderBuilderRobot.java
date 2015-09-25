@@ -1,3 +1,6 @@
+package robots;
+import buffers.CylinderBuffer;
+import parts.Cylinder;
 
 public class CylinderBuilderRobot extends Thread{
 

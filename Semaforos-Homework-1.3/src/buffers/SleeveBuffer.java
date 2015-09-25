@@ -1,34 +1,34 @@
-package Buffers;
+package buffers;
 import java.util.Vector;
 import java.util.concurrent.Semaphore;
 
-import Pieces.SweaterBody;
+import parts.Sleeve;
 
-public class SweaterBodyBuffer {
+public class SleeveBuffer {
 	final int MAX_PIECES = 10;
 	
-	Vector<SweaterBody> buffer = new Vector<>();
-		
+	Vector<Sleeve> buffer = new Vector<>();
+	
 	Semaphore full = new Semaphore(MAX_PIECES);
 	Semaphore empty = new Semaphore(0);
 	
 	Object lock = new Object();
 	
-	public void putSweaterBody(SweaterBody b) {
+	public void putSleeve(Sleeve s) {
 		try {
 			full.acquire();
-			synchronized(lock) {
-				buffer.addElement(b);
-			}
-			empty.release();
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		synchronized(lock) {
+			buffer.addElement(s);
+		}
+		empty.release();
 	}
 	
-	public SweaterBody getSweaterBody() {
-		SweaterBody s = null;
+	public Sleeve getSleeve() {
+		Sleeve s = null;
 		try {
 			empty.acquire();
 			synchronized(lock) {
@@ -39,8 +39,6 @@ public class SweaterBodyBuffer {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 		return s;
 	}
-
 }

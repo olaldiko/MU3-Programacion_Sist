@@ -1,6 +1,6 @@
-package Builders;
-import Buffers.SweaterBodyBuffer;
-import Pieces.SweaterBody;
+package builders;
+import buffers.SweaterBodyBuffer;
+import parts.SweaterBody;
 
 public class SweaterBodyMaker extends Thread {
 	

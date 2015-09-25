@@ -1,3 +1,6 @@
+package robots;
+import buffers.BucketBuffer;
+import buffers.CylinderBuffer;
 
 public class AssemblerRobot extends Thread{
 	

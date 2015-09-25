@@ -1,5 +1,11 @@
 import java.util.Scanner;
 
+import buffers.BucketBuffer;
+import buffers.CylinderBuffer;
+import robots.AssemblerRobot;
+import robots.BucketBuilderRobot;
+import robots.CylinderBuilderRobot;
+
 public class Principal {
 	
 	BucketBuffer bucketBuffer = new BucketBuffer();

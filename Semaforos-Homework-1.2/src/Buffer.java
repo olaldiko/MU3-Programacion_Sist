@@ -2,7 +2,7 @@ import java.util.concurrent.Semaphore;
 
 public class Buffer {
 	volatile int index = 0;
-	final int BUFFER_SIZE = 50;
+	final int BUFFER_SIZE = 4;
 	int[] buffer = new int[BUFFER_SIZE];
 	Semaphore inUse = new Semaphore(1);
 	public Buffer() {

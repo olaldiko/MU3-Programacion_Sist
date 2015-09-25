@@ -1,13 +1,17 @@
+package builders;
+import buffers.SleeveBuffer;
+import parts.Sleeve;
 
-public class BucketBuilderRobot extends Thread {
-	
-	volatile boolean finalize = false;
-	
-	BucketBuffer buffer;
+public class SleeveMaker extends Thread {
 	
 	final int BUILD_TIME = 100;
 	
-	public BucketBuilderRobot(BucketBuffer buffer) {
+	volatile boolean finalize = false;
+	
+	
+	SleeveBuffer buffer;
+	
+	public SleeveMaker(SleeveBuffer buffer) {
 		this.buffer = buffer;
 	}
 	
@@ -20,14 +24,13 @@ public class BucketBuilderRobot extends Thread {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			buffer.putBucket(new Bucket());
-			System.out.println("Thre robot puts a bukcet into the buffer");
+			buffer.putSleeve(new Sleeve());
+			System.out.println("Sleeve maker puts a new piece into the buffer");
+
 		}
 	}
 	
 	public void endTask() {
 		this.finalize = true;
 	}
-	
-	
 }

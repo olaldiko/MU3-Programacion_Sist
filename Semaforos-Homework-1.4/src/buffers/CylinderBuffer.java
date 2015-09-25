@@ -1,5 +1,8 @@
+package buffers;
 import java.util.Vector;
 import java.util.concurrent.Semaphore;
+
+import parts.Cylinder;
 
 public class CylinderBuffer {
 

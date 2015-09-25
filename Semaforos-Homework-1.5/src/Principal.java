@@ -1,5 +1,9 @@
 import java.util.Scanner;
 
+import buffers.PartBuffer;
+import robots.AssemblyRobot;
+import robots.SupplyRobot;
+
 public class Principal {
 	final int PART_TYPES = 3;
 	

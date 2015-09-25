@@ -1,10 +1,10 @@
 import java.util.Scanner;
 
-import Buffers.SleeveBuffer;
-import Buffers.SweaterBodyBuffer;
-import Builders.SleeveMaker;
-import Builders.SweaterAssembler;
-import Builders.SweaterBodyMaker;
+import buffers.SleeveBuffer;
+import buffers.SweaterBodyBuffer;
+import builders.SleeveMaker;
+import builders.SweaterAssembler;
+import builders.SweaterBodyMaker;
 
 public class Principal {
 	final int NUM_SLEEVE_MAKERS = 1;
